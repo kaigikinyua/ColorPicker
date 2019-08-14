@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from ConvertColor import *
+from DB import *
 class CPicker:
 	def __init__(self):
 		self.root=Tk()
@@ -37,7 +38,7 @@ class CPicker:
 		self.seeFavourites.pack(fill=X)
 		self.addFavourite=Button(self.actionsPanel,text="Add to favourite")
 		self.addFavourite.pack(fill=X)
-		self.savecolor=Button(self.actionsPanel,text="Save Color")
+		self.savecolor=Button(self.actionsPanel,text="Save Color",command=self.saveColor)
 		self.savecolor.pack(fill=X)
 		self.seeDiffColors=Button(self.actionsPanel,text="Explore Colors")
 		self.seeDiffColors.pack(fill=X)
@@ -47,14 +48,32 @@ class CPicker:
 		self.root.mainloop()
 
 	def changeColor(self):
+		ans=self.getHex()
+		if(ans==False):
+			hexV=self.hexValues.get()
+			self.ErrorMsg(hexV+" is not a valid hex code")
+		else:
+			self.seeColor.configure(bg=ans)
+	def saveColor(self):
+		ans=self.getHex()
+		hexV=self.hexValues.get()
+		if(ans==False):
+			self.ErrorMsg(hexV+" is not a valid hex code")
+		else:
+			db=DB()
+			db.insert('SavedColors',hexV)
+	def ErrorMsg(self,msg):
+		messagebox.showerror('Error',msg)
+	def getHex(self):
 		hexV=self.hexValues.get()
 		if(len(hexV)>0):
 			c=Convert()
 			ishex=c.confirmHex(hexV)
 			if(ishex!=True):
-				self.ErrorMsg(hexV+" is not a valid hex code")
+				return False
 			else:
-				self.seeColor.configure(bg=hexV)
-	def ErrorMsg(self,msg):
-		messagebox.showerror('Error',msg)
+				return hexV
+		else:
+			self.ErrorMsg("Cannot Process an empty field")
+
 c=CPicker()
