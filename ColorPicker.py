@@ -4,25 +4,47 @@ class CPicker:
 	def __init__(self):
 		self.root=Tk()
 		self.root.title("ColorPicker")
-		#create color and display panel
+	#create color and display panel
 		self.createColor=LabelFrame(self.root,text="Create Color",width=100)
+		#rectangle to view color created
 		self.seeColor=Frame(self.createColor,width=100,height=100,bg="#FFFFFF")
 		self.seeColor.pack()
-
+		#enter values here to create color
 		self.colorValues=Frame(self.createColor)
 		rgbLabel=Label(self.colorValues,text="RGB values")
 		rgbLabel.pack()
-		self.rgbValues=Entry(self.colorValues)
-		self.rgbValues.pack()
-		self.createColor.pack(side=LEFT,fill=Y)
+		#rgb spinboxes
+		spinboxFrame=Frame(self.colorValues)
+		self.rValue=Spinbox(spinboxFrame,from_=0,to=255,width=5)
+		self.rValue.pack(side=LEFT)
+		self.gValue=Spinbox(spinboxFrame,from_=0,to=255,width=5)
+		self.gValue.pack(side=LEFT)
+		self.bValue=Spinbox(spinboxFrame,from_=0,to=255,width=5)
+		self.bValue.pack(side=LEFT)
+		spinboxFrame.pack()
+		hexLabel=Label(self.colorValues,text="Hex Codes")
+		hexLabel.pack()
+		self.hexValues=Entry(self.colorValues)
+		self.hexValues.pack()
 		self.colorValues.pack()
-		#actions panel
+		self.changeColor=Button(self.colorValues,text="Generate",command=self.changeColor)
+		self.changeColor.pack(fill=X)
+		self.createColor.pack(side=LEFT,fill=Y)
+	#actions panel
 		self.actionsPanel=LabelFrame(self.root,text="Actions",width=100)
+		self.seeFavourites=Button(self.actionsPanel,text="See Favourites")
+		self.seeFavourites.pack(fill=X)
 		self.addFavourite=Button(self.actionsPanel,text="Add to favourite")
-		self.addFavourite.pack()
+		self.addFavourite.pack(fill=X)
 		self.savecolor=Button(self.actionsPanel,text="Save Color")
-		self.savecolor.pack()
+		self.savecolor.pack(fill=X)
+		self.seeDiffColors=Button(self.actionsPanel,text="Explore Colors")
+		self.seeDiffColors.pack(fill=X)
 		self.actionsPanel.pack(side=RIGHT,fill=Y)
+	#root window
+		self.root.resizable(False,False)
 		self.root.mainloop()
 
+	def changeColor(self):
+		print("Color Change")
 c=CPicker()
