@@ -1,5 +1,6 @@
 from tkinter import *
-
+from tkinter import messagebox
+from ConvertColor import *
 class CPicker:
 	def __init__(self):
 		self.root=Tk()
@@ -46,5 +47,14 @@ class CPicker:
 		self.root.mainloop()
 
 	def changeColor(self):
-		print("Color Change")
+		hexV=self.hexValues.get()
+		if(len(hexV)>0):
+			c=Convert()
+			ishex=c.confirmHex(hexV)
+			if(ishex!=True):
+				self.ErrorMsg(hexV+" is not a valid hex code")
+			else:
+				self.seeColor.configure(bg=hexV)
+	def ErrorMsg(self,msg):
+		messagebox.showerror('Error',msg)
 c=CPicker()
