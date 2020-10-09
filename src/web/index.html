@@ -20,20 +20,24 @@
                         <div>
                             <div class="field">
                                 <label for="red">R</label>
-                                <input type="range" min="0" max="255" value="100" class="slidder" name="red"/>
+                                <input type="range" min="0" max="255" value="100" class="slidder" name="red" id="red_slider"/>
                             </div>
                             <div class="field">
                                 <label for="green">G</label>
-                                <input type="range" min="0" max="255" value="100" class="slidder" name="green"/>
+                                <input type="range" min="0" max="255" value="100" class="slidder" name="green" id="green_slider"/>
                             </div>
                             <div class="field">
                                 <label for="blue">B</label>
-                                <input type="range" min="0" max="255" value="100" class="slidder" name="blue"/>
+                                <input type="range" min="0" max="255" value="100" class="slidder" name="blue" id="blue_slider"/>
                             </div>
                             <div class="field">
                                 <label for="alpha">A</label>
-                                <input type="range" min="0" max="100" value="100" class="slidder"/>
+                                <input type="range" min="0" max="100" value="100" class="slidder" id="alpha_slider"/>
                             </div>
+                        </div>
+                        <div>
+                            <button>Save Color</button>
+                            <button>Randomize</button>
                         </div>
                     </div>
                 </div>
@@ -54,5 +58,6 @@
             </div>
         </div>
     </section>
+    <script src="./js/Colors.js"></script>
 </body>
 </html>
