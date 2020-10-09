@@ -83,3 +83,24 @@ h4{
     letter-spacing: 2px;
     color:rgba(10,10,10,0.8);
 }
+button{
+    padding:10px;
+    display: block;
+    width:100%;
+    margin-top:15px;
+    border:none;
+    background:darken(purple,10%);
+    color:white;
+    border-radius: 20px;
+    outline: none;
+}
+@media only screen and (max-width:700px){
+    div.apps{
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    div.app{
+        width:100%;
+    }
+}
