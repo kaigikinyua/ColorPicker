@@ -126,6 +126,18 @@ button {
   outline: none;
 }
 
+div.pallet_icon {
+  position: fixed;
+  bottom: 100px;
+  left: 100px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #e600e6;
+  -webkit-box-shadow: 1px 1px 30px 30px rgba(10, 10, 10, 0.3);
+          box-shadow: 1px 1px 30px 30px rgba(10, 10, 10, 0.3);
+}
+
 @media only screen and (max-width: 700px) {
   div.apps {
     -webkit-box-orient: vertical;
@@ -140,6 +152,10 @@ button {
   }
   div.app {
     width: 100%;
+  }
+  div.pallet_icon {
+    left: 20px;
+    bottom: 20px;
   }
 }
 /*# sourceMappingURL=colors.css.map */
