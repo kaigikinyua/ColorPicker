@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ColorCapsule</title>
+    <link rel="stylesheet" href="./css/colors.css">
+</head>
+<body>
+    <nav class="topnav">Color Capsule</nav>
+    <section class="full">
+        <div class="container">
+            <div class="app_bar">Colors</div>
+            <div class="apps">
+                <div class="app">
+                    <div class="create_color">
+                        <h4>Create Color</h4>
+                        <div class="color_box" id="color_box">
+                        </div>
+                        <div>
+                            <div class="field">
+                                <label for="red">R</label>
+                                <input type="range" min="0" max="255" value="100" class="slidder" name="red"/>
+                            </div>
+                            <div class="field">
+                                <label for="green">G</label>
+                                <input type="range" min="0" max="255" value="100" class="slidder" name="green"/>
+                            </div>
+                            <div class="field">
+                                <label for="blue">B</label>
+                                <input type="range" min="0" max="255" value="100" class="slidder" name="blue"/>
+                            </div>
+                            <div class="field">
+                                <label for="alpha">A</label>
+                                <input type="range" min="0" max="100" value="100" class="slidder"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app">
+                    <div class="favourite_colors">
+                        <h4>Favourite Colors</h4>
+                        <div class="color_container">
+                            <div class="colors"></div>
+                            <div class="colors"></div>
+                            <div class="colors"></div>
+                            <div class="colors"></div>
+                            <div class="colors"></div>
+                            <div class="colors"></div>
+                            <div class="colors"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
