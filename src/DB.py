@@ -6,6 +6,7 @@ class DB:
 			self.db=sqlite3.connect('./Colors.db')
 		except:
 			E=Messages('error','Error during Storage')
+			
 	def select(self,tablename,param,column):
 		sql=""
 		if(len(tablename)>0 and len(param)>0 and len(column)>0):
@@ -29,12 +30,5 @@ class DB:
 			self.db.commit()
 		else:
 			E=Messages('Empty Field','Please make sure all the parameters are filled')
-	def adminQueries(self,sqlquery):
-		c=self.db.cursor()
-		try:
-			c.execute(sqlquery)
-			self.db.commit()
-		except:
-			E=Messages('Error','Could Not execute query')
 
 d=DB()
