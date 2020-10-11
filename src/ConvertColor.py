@@ -1,3 +1,4 @@
+import re
 class Convert:
 	def rgbTOhex(self,rgb):
 		print("Convert RGB to Hex")
@@ -21,5 +22,51 @@ class Convert:
 		else:
 			return False
 		return True
+	def color_to_hex(color):
+		if(Color.color_check(color)):
+			div=int(color)/16
+			rem=int(color)%16
+			return div+rem
+
+	def hex_to_rgb(color):
+		if(Color.hex_check(color)):
+			red=Color.single_hex_to_rgb(color[1:3])
+			green=Color.single_hex_to_rgb(color[3:5])
+			blue=Color.single_hex_to_rgb(color[5:7])
+			color={"red":red,"green":green,"blue":blue}
+			return color
+		return False
+
+class Color:
+	@staticmethod
+	def color_check(color):
+		if(int(color)>-1 and int(color)<256):
+			return True
+		return False
+
+	@staticmethod
+	def hex_check(color):
+		x=re.search("^#[A-Fa-f0-9]",color)
+		if(X!=None):
+			return True
+		return False
+
+	@staticmethod
+	def single_hex_to_rgb(hex):
+		tenths=Color.decimal_equivalent(hex[0])
+		ones=Color.decimal_equivalent(hex[1])
+		value=(tenths*16)+ones
+
+	@staticmethod
+	def decimal_equivalent(hex):
+		try:
+			hex=int(hex)
+			return hex
+		except:
+			hex_codes={"a":10,"b":11,"c":12,"d":13,"e":14,:"f":15}
+			for code in hex_codes:
+				if(lower(hex)==code):
+					return hex_codes[hex]
+		return False
 
 
