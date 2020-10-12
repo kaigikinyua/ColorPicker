@@ -132,7 +132,9 @@ div.templates{
     display: none;
     div.app{
         position: relative;
+        width:75%;
         left:50%;top:50%;
+        min-height: 60%;
         transform: translate(-50%,-50%);
         padding:0px;
         margin:0px;
@@ -144,7 +146,6 @@ div.templates{
     }
     div.template_plate{
         position: relative;
-        height:200px;
         width:100%;
         display: flex;
         flex-wrap: wrap;
@@ -173,6 +174,32 @@ div.templates{
             text-align: center;
         }
     }
+    div.close_pane{
+        margin-top:20px;
+        height:40px;
+        width: 100%;
+        background:whitesmoke;
+        align-content: center;
+        text-align: center;
+    }
+}
+div.cross{
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+    background:crimson;
+    width:30px;
+    height:5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+div.one{
+    margin-top:7px;
+    transform: rotate(-45deg);
+}
+div.two{
+    margin-top:-7px;
+    transform: rotate(45deg);
 }
 @media only screen and (max-width:700px){
     div.apps{

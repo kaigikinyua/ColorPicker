@@ -52,8 +52,8 @@
             </div>
         </div>
     </section>
-    <div class="pallet_icon">T</div>
-    <div class="templates">
+    <div class="pallet_icon" onclick="openTemplates()">T</div>
+    <div class="templates" id="templates">
         <div class="app">
             <div class="app_bar" style="background:purple;color:white;">Templates</div>
             <div class="template_plate">
@@ -106,9 +106,14 @@
                     </div>
                 </div>
             </div>
+            <div class="close_pane" onclick="closeTemplates()">
+                <div class="cross one"></div>
+                <div class="cross two"></div>
+            </div>
         </div>
     </div>
     <script src="./js/Colors.js"></script>
     <script src="./js/Storage.js"></script>
+    <script src="./js/Dom.js"></script>
 </body>
 </html>

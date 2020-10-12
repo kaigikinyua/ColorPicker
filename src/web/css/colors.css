@@ -211,8 +211,10 @@ div.templates {
 
 div.templates div.app {
   position: relative;
+  width: 75%;
   left: 50%;
   top: 50%;
+  min-height: 60%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   padding: 0px;
@@ -232,7 +234,6 @@ div.templates div.app {
 
 div.templates div.template_plate {
   position: relative;
-  height: 200px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -272,6 +273,40 @@ div.templates div.capsule h3 {
   font-weight: lighter;
   letter-spacing: 2px;
   text-align: center;
+}
+
+div.templates div.close_pane {
+  margin-top: 20px;
+  height: 40px;
+  width: 100%;
+  background: whitesmoke;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+}
+
+div.cross {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: crimson;
+  width: 30px;
+  height: 5px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+div.one {
+  margin-top: 7px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+div.two {
+  margin-top: -7px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 @media only screen and (max-width: 700px) {
