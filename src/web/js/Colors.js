@@ -54,6 +54,9 @@ function randomize(){
     red_slider.value=colors[0]
     green_slider.value=colors[1]
     blue_slider.value=colors[2]
+    var create_color=document.getElementById("color_box")
+    create_color.classList.toggle("bounce")
+    setTimeout(()=>{create_color.classList.toggle("bounce")},1000)
 }
 
 function loadFavColors(){
@@ -78,7 +81,9 @@ function droped_color(event){
     red_slider.value=parseInt(colors[0])
     green_slider.value=parseInt(colors[1])
     blue_slider.value=parseInt(colors[2])
-    
+    var create_color=document.getElementById("color_box")
+    create_color.classList.toggle("bounce")
+    setTimeout(()=>{create_color.classList.toggle("bounce")},1000)
 }
 function allowDrop(event) {
     event.preventDefault()
@@ -86,4 +91,5 @@ function allowDrop(event) {
 function drag_start(event){
     //console.log(event.target.dataset["color"])
     event.dataTransfer.setData("text",event.target.dataset["color"])
+    //event.target.style="opacity:0.9;"
 }
