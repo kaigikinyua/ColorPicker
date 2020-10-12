@@ -4,6 +4,7 @@ window.onload=()=>{
     var blue_slider=document.getElementById("blue_slider")
     var alpha_slider=document.getElementById("alpha_slider")
     change_new_color(red_slider.value,green_slider.value,blue_slider.value,alpha_slider.value)
+    loadFavColors()
 }
 class Colors{
     constructor(){}
@@ -26,8 +27,7 @@ const red_slider=document.getElementById("red_slider")
 const green_slider=document.getElementById("green_slider")
 const blue_slider=document.getElementById("blue_slider")
 const alpha_slider=document.getElementById("alpha_slider")
-
-
+var dragged_color=""
 
 red_slider.oninput=()=>{
     change_new_color(red_slider.value,green_slider.value,blue_slider.value,alpha_slider.value)
@@ -54,4 +54,36 @@ function randomize(){
     red_slider.value=colors[0]
     green_slider.value=colors[1]
     blue_slider.value=colors[2]
+}
+
+function loadFavColors(){
+    var fav_colors=document.getElementById("favourite_colors")
+    for(var i=0;i<10;i++){
+        var d=document.createElement("div")
+        d.classList.add("colors")
+        d.draggable=true
+        d.ondragstart=drag_start
+        var col=Colors.generate_color()
+        d.dataset['color']=col
+        d.style="background:rgba("+col[0]+","+col[1]+","+col[2]+");"
+        fav_colors.appendChild(d)
+    }
+}
+function droped_color(event){
+    //console.log(event.dataTransfer.getData("text"))
+    var col=event.dataTransfer.getData("text")
+    //console.log(col)
+    var colors=col.split(',')
+    change_new_color(colors[0],colors[1],colors[2],100)
+    red_slider.value=parseInt(colors[0])
+    green_slider.value=parseInt(colors[1])
+    blue_slider.value=parseInt(colors[2])
+    
+}
+function allowDrop(event) {
+    event.preventDefault()
+}
+function drag_start(event){
+    //console.log(event.target.dataset["color"])
+    event.dataTransfer.setData("text",event.target.dataset["color"])
 }

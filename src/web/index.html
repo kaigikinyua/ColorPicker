@@ -15,7 +15,7 @@
                 <div class="app">
                     <div class="create_color">
                         <h4>Create Color</h4>
-                        <div class="color_box" id="color_box">
+                        <div class="color_box" id="color_box" ondrop="droped_color(event)" ondragover="allowDrop(event)">
                         </div>
                         <div>
                             <div class="field">
@@ -45,14 +45,7 @@
                 <div class="app">
                     <div class="favourite_colors">
                         <h4>Favourite Colors</h4>
-                        <div class="color_container">
-                            <div class="colors"></div>
-                            <div class="colors"></div>
-                            <div class="colors"></div>
-                            <div class="colors"></div>
-                            <div class="colors"></div>
-                            <div class="colors"></div>
-                            <div class="colors"></div>
+                        <div class="color_container" id="favourite_colors">
                         </div>
                     </div>
                 </div>
