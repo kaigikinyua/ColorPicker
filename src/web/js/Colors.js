@@ -21,6 +21,22 @@ class Colors{
         }
         return x;
     }
+    static convert_to_hex=function({red,blue,green}){
+        
+    }
+    static convert_single_to_hex(value){
+        var tens=Colors.rgb_to_hex(value[0])*15
+        var ones=Colors.rgb_to_hex(value[1])
+        return parseInt(tens)+parseInt(ones)
+    }
+    static rgb_to_hex(value){
+        var cols={"a":10,"b":11,"c":12,"d":13,"e":14,"f":15}
+        if(parseInt(value)==NaN){
+            return cols[value.toLowerCase()]
+        }else{
+            return value
+        }
+    }
 }
 
 const red_slider=document.getElementById("red_slider")
