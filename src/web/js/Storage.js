@@ -76,3 +76,16 @@ function deleteColor(template_name,value){
     }
     return false
 }
+
+function renderTemplate(templateName,colors){
+    var temp_plate=document.getElementById("template_plate")
+    var tmp=document.createElement("div")
+    tmp.classList.append("class")
+    colors.forEach(elm=>{
+        var x=document.createElement("div")
+        x.classList.add("class")
+        x.style.background=elm+";";
+        tmp.appendChild(x)
+    });
+    temp_plate.appendChild(tmp)
+}
