@@ -1,3 +1,8 @@
+function addToFavourite(){   
+}
+
+
+
 
 function localStorageSupport(){
     if(window.localStorage){

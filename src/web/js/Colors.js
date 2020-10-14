@@ -22,27 +22,36 @@ class Colors{
         return x;
     }
     static convert_to_hex=function({red,blue,green}){
-        var hex={"red":"","green":"","blue":""};
+        var red_hex=Colors.rgb_to_hex(red)
+        var green_hex=Colors.rgb_to_hex(green)
+        var blue_hex=Colors.rgb_to_hex(blue)
+        console.log(red_hex+""+green_hex+""+blue_hex)
     }
-    static convert_hex_to_rgb(value){
+    /*static convert_hex_to_rgb(value){
         var tens=Colors.rgb_to_hex(value[0])*15
         var ones=Colors.rgb_to_hex(value[1])
         return parseInt(tens)+parseInt(ones)
-    }
+    }*/
     static rgb_to_hex(value){
-        var cols={"a":10,"b":11,"c":12,"d":13,"e":14,"f":15}
+        var cols={"10":"a","11":"b","12":"b","13":"c","14":"e","15":"f"}
         var tens=Math.floor(parseInt(value)/16)
         var ones=parseInt(value)%16
-        var hex=""
+        console.log(value)
+        if(tens>9){
+            tens=cols[tens]
+        }if(ones>9){
+            ones=cols[ones]
+        }
+        return tens+""+ones
     }
-    static hex_to_rgb(value){
+    /*static hex_to_rgb(value){
         var cols={"a":10,"b":11,"c":12,"d":13,"e":14,"f":15}
         if(parseInt(value)==NaN){
             return cols[value.toLowerCase()]
         }else{
             return value
         }
-    }
+    }*/
 }
 
 const red_slider=document.getElementById("red_slider")
@@ -115,3 +124,6 @@ function drag_start(event){
     event.dataTransfer.setData("text",event.target.dataset["color"])
     //event.target.style="opacity:0.9;"
 }
+
+
+//Colors.convert_to_hex({"red":255,"green":180,"blue":255});
