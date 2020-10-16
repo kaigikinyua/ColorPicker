@@ -1,3 +1,7 @@
+window.onload()=function () {
+    var templates=fetchTemplates();
+    appendTemplates(templates);
+}
 function addToFavourite(){   
 }
 
