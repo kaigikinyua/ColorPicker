@@ -1,2 +1,2 @@
 # Color Capsule 
-Its a free and opensource color editor on the browser!
+Its a free and opensource color editor on the browser!!

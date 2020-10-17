@@ -63,7 +63,7 @@ class Color:
 			hex=int(hex)
 			return hex
 		except:
-			hex_codes={"a":10,"b":11,"c":12,"d":13,"e":14,:"f":15}
+			hex_codes={"a":10,"b":11,"c":12,"d":13,"e":14,"f":15}
 			for code in hex_codes:
 				if(lower(hex)==code):
 					return hex_codes[hex]

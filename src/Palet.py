@@ -1,3 +1,4 @@
+from DB import *
 import tk
 
 class Gui:
