@@ -6,7 +6,16 @@ var drawingBoard=document.getElementById("color_box")
 function addToFavourite(){   
 }
 function saveColor() {
-    
+    var color=drawingBoard.dataset["current_hex"]
+    var alpha=drawingBoard.dataset["alpha"]
+    try{
+        localStorage.getItem("saved")
+        //fetch saved templates
+        //append new saved color
+        //save color
+    }catch(e){
+        localStorage.setItem("saved",JSON.stringify({"colors":[{"color":color}]}))
+    }
 }
 
 function localStorageSupport(){
@@ -40,7 +49,7 @@ function getValue(key) {
     templates schema
         {
             templates:[
-                {"name":"template_name","colors":[{"value":"#aabbcc"},{"value":"#ff4321"}]}
+                {"name":"template_name","colors":[{"value":"#aabbcc","alpha":int[0-10]}]}
             ]
         }
 */
