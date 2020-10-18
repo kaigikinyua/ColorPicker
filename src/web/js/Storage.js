@@ -2,11 +2,12 @@ window.onload()=function () {
     var templates=fetchTemplates();
     appendTemplates(templates);
 }
+var drawingBoard=document.getElementById("color_box")
 function addToFavourite(){   
 }
-
-
-
+function saveColor() {
+    
+}
 
 function localStorageSupport(){
     if(window.localStorage){

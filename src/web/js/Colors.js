@@ -76,6 +76,9 @@ alpha_slider.oninput=()=>{
 
 function change_new_color(r,g,b,a){
     var create_color=document.getElementById("color_box")
+    create_color.dataset["current_rgb"]={"red":r,"green":g,"blue":b}
+    create_color.dataset["alpha"]=a
+    create_color.dataset["current_hex"]=Colors.convert_to_hex({"red":r,"green":g,"blue":b})
     create_color.style="background:rgba("+r+","+g+","+b+","+parseInt(a)/100+");"
 }
 
