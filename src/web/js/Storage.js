@@ -19,22 +19,21 @@ function saveColor() {
 }
 
 function localStorageSupport(){
-    if(window.localStorage){
-        return true
-    }else{
-        return false
-    }
+    if(window.localStorage)return true;
+    return false;
 }
 function saveValue(key,value){
+    if(key==undefined || value==undefined)return false
     if(localStorageSupport()){
-        try{
-            localStorage.setItem(key,value);
-        }catch(e){
+        try{localStorage.setItem(key,value);return true;}
+        catch(e){
             console.log("Error while saving value "+key)
+            console.error(e)
         }
     }
 }
-function getValue(key) {
+function getValue(key){
+    if(key==undefined) return false
     if(localStorageSupport()){
         try{
             var item=localStorage.getItem(key)
