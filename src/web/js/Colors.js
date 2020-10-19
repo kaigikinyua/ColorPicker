@@ -130,3 +130,6 @@ function drag_start(event){
 
 
 //Colors.convert_to_hex({"red":255,"green":180,"blue":255});
+
+/* so tired i loke coding */
+/* i hate computer maintainece*/
