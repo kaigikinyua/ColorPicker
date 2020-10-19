@@ -52,7 +52,6 @@ function getValue(key){
             ]
         }
 */
-
 function getTemplates(){
     if(localStorageSupport()){
         var x=JSON.parse(localStorage.getItem("templates"))
@@ -68,6 +67,7 @@ function newTemplate(template_name) {
     }
 }
 function addColorToTemplate(template_name,value){
+    if(template_name==undefined || value==undefined) return false
     var templates=getTemplates()
     if(templates!=false){
         templates.forEach(element => {
