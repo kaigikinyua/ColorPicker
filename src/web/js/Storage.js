@@ -1,10 +1,20 @@
-window.onload()=function () {
-    var templates=fetchTemplates();
-    appendTemplates(templates);
+window.onload=()=>{
+    //var templates=fetchTemplates();
+    //appendTemplates(templates);
 }
 var drawingBoard=document.getElementById("color_box")
 function addToFavourite(){   
 }
+function favourite(){
+    var color_box=document.getElementById("color_box")
+    var hex=color_box.dataset["current_hex"]
+    var alpha=color_box.dataset["alpha"]
+    var rgb=color_box.dataset["current_rgb"]
+    console.log(hex)
+    console.warn(alpha)
+    console.log(rgb)
+}
+
 function saveColor() {
     var color=drawingBoard.dataset["current_hex"]
     var alpha=drawingBoard.dataset["alpha"]

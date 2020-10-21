@@ -15,7 +15,7 @@
                 <div class="app">
                     <div class="create_color">
                         <h4>Create Color</h4>
-                        <div class="color_box" id="color_box" ondrop="droped_color(event)" ondragover="allowDrop(event)">
+                        <div class="color_box" id="color_box" ondrop="droped_color(event)" ondragover="allowDrop(event)" data-current_rgb="{'red':100,'green':100,'blue':100}" data-alpha="1" data-current_hex="#646464">
                         </div>
                         <div>
                             <div class="field">
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div>
-                            <button>Favourite</button>
+                            <button onclick="favourite()">Favourite</button>
                             <button onclick="randomize()">Randomize</button>
                         </div>
                     </div>
