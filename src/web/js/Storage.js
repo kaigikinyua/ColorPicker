@@ -10,24 +10,16 @@ function favourite(){
     var hex=color_box.dataset["current_hex"]
     var alpha=color_box.dataset["alpha"]
     var rgb=color_box.dataset["current_rgb"]
-    console.log(hex)
-    console.warn(alpha)
-    console.log(rgb)
-}
-
-function saveColor() {
-    var color=drawingBoard.dataset["current_hex"]
-    var alpha=drawingBoard.dataset["alpha"]
+    var favourite=[]
     try{
-        localStorage.getItem("saved")
-        //fetch saved templates
-        //append new saved color
-        //save color
+        var f=JSON.parse(localStorage.getItem("favourite"))
+        f.push({"color":hex,"alpha":alpha})
+        favourite=f
     }catch(e){
-        localStorage.setItem("saved",JSON.stringify({"colors":[{"color":color}]}))
+        favourite=[{"color":hex,"alpha":alpha}]
     }
+    localStorage.setItem("favourite",JSON.stringify(favourite))
 }
-
 function localStorageSupport(){
     if(window.localStorage)return true;
     return false;

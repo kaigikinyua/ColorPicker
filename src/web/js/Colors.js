@@ -26,6 +26,7 @@ class Colors{
         var green_hex=Colors.rgb_to_hex(green)
         var blue_hex=Colors.rgb_to_hex(blue)
         console.log(red_hex+""+green_hex+""+blue_hex)
+        return "#"+red_hex+green_hex+blue_hex
     }
     /*static convert_hex_to_rgb(value){
         var tens=Colors.rgb_to_hex(value[0])*15
@@ -76,7 +77,7 @@ alpha_slider.oninput=()=>{
 
 function change_new_color(r,g,b,a){
     var create_color=document.getElementById("color_box")
-    create_color.dataset["current_rgb"]={"red":r,"green":g,"blue":b}
+    create_color.dataset["current_rgb"]=JSON.stringify({"red":r,"green":g,"blue":b})
     create_color.dataset["alpha"]=a
     create_color.dataset["current_hex"]=Colors.convert_to_hex({"red":r,"green":g,"blue":b})
     create_color.style="background:rgba("+r+","+g+","+b+","+parseInt(a)/100+");"
