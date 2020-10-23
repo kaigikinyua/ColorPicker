@@ -20,6 +20,10 @@ function favourite(){
     }
     localStorage.setItem("favourite",JSON.stringify(favourite))
 }
+function initColors(){
+    var favourite=getValue('favourite')
+    var templates=getValue('templates')
+}
 function localStorageSupport(){
     if(window.localStorage)return true;
     return false;
