@@ -3,13 +3,11 @@ window.onload=()=>{
     //appendTemplates(templates);
 }
 var drawingBoard=document.getElementById("color_box")
-function addToFavourite(){   
-}
 function favourite(){
-    var color_box=document.getElementById("color_box")
+    var color_box=drawingBoard
     var hex=color_box.dataset["current_hex"]
     var alpha=color_box.dataset["alpha"]
-    var rgb=color_box.dataset["current_rgb"]
+    //var rgb=color_box.dataset["current_rgb"]
     var favourite=[]
     try{
         var f=JSON.parse(localStorage.getItem("favourite"))
@@ -50,13 +48,12 @@ function getValue(key){
         }
     }    
 }
-/*
-    templates schema
-        {
-            templates:[
-                {"name":"template_name","colors":[{"value":"#aabbcc","alpha":int[0-10]}]}
-            ]
-        }
+/*templates schema
+    {
+        templates:[
+            {"name":"template_name","colors":[{"value":"#aabbcc","alpha":int[0-10]}]}
+        ]
+    }
 */
 function getTemplates(){
     if(localStorageSupport()){
