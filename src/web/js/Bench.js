@@ -12,3 +12,12 @@ class Elements{
     }
 }
 
+class Text{
+    element;
+    constructor(element){
+        this.element=element
+    }
+    changeColor(){
+        
+    }
+}
