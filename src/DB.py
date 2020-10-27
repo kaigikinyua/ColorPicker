@@ -1,5 +1,17 @@
 import sqlite3
 from Messages import *
+
+class ColorsDB:
+	def fetchFaveColors(self):
+		d=DB()
+		colors=d.select("favourite","*","hexvalue")
+		return colors
+
+	def fetchTemplate(self,templatename):
+		d=DB()
+		colors=d.select("template",templatename,"templatename")
+		return colors
+
 class DB:
 	def __init__(self):
 		try:
@@ -15,12 +27,15 @@ class DB:
 			else:
 				sql="SELECT * from "+tablename+" WHERE "+column+" = '"+param+"'"
 			c=self.db.cursor()
+			#print(sql)
 			c.execute(sql)
 			data=c.fetchall()
-			print(data)
+			#print(data)
 			return data
 		else:
 			E=Messages('Empty Field','Please make sure all the parameters are filled')
+			return False
+
 	def insert(self,tablename,param):
 		sql=""
 		if(len(tablename)>0 and len(param)>0):
@@ -31,4 +46,6 @@ class DB:
 		else:
 			E=Messages('Empty Field','Please make sure all the parameters are filled')
 
-d=DB()
+c=ColorsDB()
+print(c.fetchFaveColors())
+print(c.fetchTemplate("test"))
