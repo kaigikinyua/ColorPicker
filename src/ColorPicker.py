@@ -18,11 +18,9 @@ class CPicker:
 	#rgb spinboxes
 		spinboxFrame=Frame(self.colorValues)
 		self.rValue=Spinbox(spinboxFrame,from_=0,to=255,width=5)
-		self.rValue.pack(side=LEFT)
 		self.gValue=Spinbox(spinboxFrame,from_=0,to=255,width=5)
-		self.gValue.pack(side=LEFT)
 		self.bValue=Spinbox(spinboxFrame,from_=0,to=255,width=5)
-		self.bValue.pack(side=LEFT)
+		self.rValue.pack(side=LEFT);self.gValue.pack(side=LEFT);self.bValue.pack(side=LEFT)
 		spinboxFrame.pack()
 		hexLabel=Label(self.colorValues,text="Hex Codes")
 		hexLabel.pack()
