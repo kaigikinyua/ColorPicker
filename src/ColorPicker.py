@@ -8,14 +8,14 @@ class CPicker:
 		self.root.title("ColorPicker")
 	#create color and display panel
 		self.createColor=LabelFrame(self.root,text="Create Color",width=100)
-		#rectangle to view color created
+	#rectangle to view color created
 		self.seeColor=Frame(self.createColor,width=100,height=100,bg="#FFFFFF")
 		self.seeColor.pack()
-		#enter values here to create color
+	#enter values here to create color
 		self.colorValues=Frame(self.createColor)
 		rgbLabel=Label(self.colorValues,text="RGB values")
 		rgbLabel.pack()
-		#rgb spinboxes
+	#rgb spinboxes
 		spinboxFrame=Frame(self.colorValues)
 		self.rValue=Spinbox(spinboxFrame,from_=0,to=255,width=5)
 		self.rValue.pack(side=LEFT)
@@ -54,6 +54,7 @@ class CPicker:
 			self.ErrorMsg(hexV+" is not a valid hex code")
 		else:
 			self.seeColor.configure(bg=ans)
+	
 	def saveColor(self):
 		ans=self.getHex()
 		hexV=self.hexValues.get()
@@ -62,8 +63,10 @@ class CPicker:
 		else:
 			db=DB()
 			db.insert('SavedColors',hexV)
+
 	def ErrorMsg(self,msg):
 		messagebox.showerror('Error',msg)
+
 	def getHex(self):
 		hexV=self.hexValues.get()
 		if(len(hexV)>0):

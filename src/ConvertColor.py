@@ -1,10 +1,15 @@
 import re
 class Convert:
-	def rgbTOhex(self,rgb):
+	@staticmethod
+	def rgbTOhex(rgb):
 		print("Convert RGB to Hex")
-	def hexTOrgb(self,hexV):
+
+	@staticmethod
+	def hexTOrgb(hexV):
 		print("Convert HEX to RGB")
-	def confirmHex(self,hexV):
+
+	@staticmethod
+	def confirmHex(hexV):
 		lenHex=len(hexV)
 		startHex=hexV[0]
 		hexV=hexV.upper()
@@ -22,12 +27,15 @@ class Convert:
 		else:
 			return False
 		return True
+
+	@staticmethod
 	def color_to_hex(color):
 		if(Color.color_check(color)):
 			div=int(color)/16
 			rem=int(color)%16
 			return div+rem
 
+	@staticmethod
 	def hex_to_rgb(color):
 		if(Color.hex_check(color)):
 			red=Color.single_hex_to_rgb(color[1:3])

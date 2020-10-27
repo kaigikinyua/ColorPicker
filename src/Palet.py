@@ -1,7 +1,7 @@
 from DB import *
 import tk
 
-class Gui:
+class PaletGui:
     def __init__(self,palletName):
         pass
     
