@@ -2,7 +2,7 @@ from tkinter import *
 from ConvertColor import *
 from DB import *
 class Favourite:
-    def __init__():
+    def __init__(self):
         self.favourite_frame=Tk()
         self.favourite_frame.title("Favourites")
         BuildFaveGui.buildFaveGui(self.favourite_frame)
@@ -20,3 +20,4 @@ class BuildFaveGui:
         colorBox=Frame(parent,width=100,height=100,bg=color)
         colorBox.pack()
     
+f=Favourite()
